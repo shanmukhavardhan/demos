@@ -1,6 +1,7 @@
 node(slave43) {
 // Delete the workspace
 //deleteDir()
+    def app
 stage('Retrieve source code') {
     checkout scm
     
