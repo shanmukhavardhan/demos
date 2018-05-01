@@ -10,7 +10,7 @@ stage('Retrieve source code') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("shanmukha443/new43:img${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
