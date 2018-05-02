@@ -33,9 +33,4 @@ stage('Retrieve source code') {
         }
     }
 }
-  }
-  catch (e) {
-      currentBuild.result = "FAILED"
-      throw e
-    }
-}
+  
