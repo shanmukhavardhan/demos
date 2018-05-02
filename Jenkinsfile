@@ -18,7 +18,7 @@ stage('Retrieve source code') {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-            sh "/bin/mv -f $WORKSPACE/*.html /var/www/html/*.html"
+            sh 'echo "Tests passed"'
         }
     }
 
@@ -28,7 +28,7 @@ stage('Retrieve source code') {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-vsv') {
-            app.push("${env.BUILD_NUMBER}")
+            app.push("img${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
